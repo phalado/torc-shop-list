@@ -1,10 +1,10 @@
 require './Product.rb'
 
-def shop_list
+def shop_list(file_path)
   taxes = 0
   total = 0
 
-  File.foreach(ARGV[0]) do |line|
+  File.foreach(file_path) do |line|
     product = Product.new(line)
     taxes += product.taxes
     total += product.total
@@ -15,4 +15,4 @@ def shop_list
   puts "Total: #{sprintf('%.2f', total)}"
 end
 
-shop_list
+shop_list(ARGV[0])

@@ -11,7 +11,7 @@ class Product
   end
 
   def total
-    @quantity * (@price + @tax)
+    (@quantity * (@price + @tax)).round(2)
   end
 
   def output
